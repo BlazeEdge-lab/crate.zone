@@ -27,7 +27,7 @@ const hearManager = new HearManager();
 vk.updates.on('message_new', hearManager.middleware);
  
 hearManager.hear(/([a-z0-9]*-[a-z0-9]*)/i, async (ctx) => {
-    if (ignorePromo === ctx.$match[0] && process.env.PROMO_ID !== ctx.chatId && ctx.$match[0] === '-') return;
+    if (ignorePromo === ctx.$match[0] || process.env.PROMO_ID !== ctx.chatId || ctx.$match[0] === '-') return;
     ignorePromo = ctx.$match[0];
     await vk.api.messages.send({peer_id: -195809438, random_id: 0, message: 'Ввести промокод'});
     setTimeout(() => vk.api.messages.send({peer_id: -195809438, random_id: 0, message: ctx.$match[0]}), 2000)
