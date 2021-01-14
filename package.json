@@ -1,0 +1,16 @@
+{
+  "name": "forcratezone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vk-io/hear": "^1.0.2",
+    "tesseract.js": "^2.1.4",
+    "vk-io": "^4.1.2"
+  }
+}
