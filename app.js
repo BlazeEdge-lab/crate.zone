@@ -1,5 +1,4 @@
 const { VK } = require('vk-io');
-const config = require('./config.json');
 let chatId;
 if (!process.env.ACCESS_TOKEN) {
     console.log('Ошибка запуска. Вы не указали токен доступа.')
