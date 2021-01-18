@@ -26,7 +26,7 @@ const hearManager = new HearManager();
  
 vk.updates.on('message_new', hearManager.middleware);
  
-hearManager.hear(/([a-z0-9]*-[a-z0-9]*)/i, async (ctx) => {
+hearManager.hear(/([a-z0-9]{4}-[a-z0-9]{4})/i, async (ctx) => {
     console.log(ctx.chatId);
     if (ignorePromo === ctx.$match[0] || process.env.PROMO_ID != ctx.chatId || ctx.$match[0] === '-') return;
     ignorePromo = ctx.$match[0];
